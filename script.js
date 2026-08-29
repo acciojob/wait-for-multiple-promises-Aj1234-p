@@ -1,6 +1,6 @@
 function randomDelayTime(time){
   let delayTime = [...time];
-  for(let i=delayTime.length-1;i>=0;i--){
+  for(let i=delayTime.length-1;i>0;i--){
     const j = Math.floor(Math.random()*(i+1));
     [delayTime[i],delayTime[j]] = [delayTime[j],delayTime[i]];
   }
@@ -14,22 +14,22 @@ console.log(delayTime);
 const Promise1 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(delayTime[0]);
-    },delayTime[0]);
+      resolve(2000);
+    },2000);
   })
 }
 const Promise2 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(delayTime[1]);
-    },delayTime[1]);
+      resolve(1000);
+    },1000);
   })
 }
 const Promise3 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(delayTime[2]);
-    },delayTime[2]);
+      resolve(3000);
+    },3000);
   })
 }
 
