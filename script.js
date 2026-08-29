@@ -42,7 +42,7 @@ Promise.all([Promise1(),Promise2(),Promise3()]).then((data)=>{
   let tdata1 = document.createElement('td');
   let tdata2 = document.createElement('td');
   tdata1.textContent = 'Total';
-  tdata2.textContent = totalSeconds.toFixed(2);
+  tdata2.textContent = totalSeconds.toFixed(3);
   trow.appendChild(tdata1);
   trow.appendChild(tdata2);
   output.appendChild(trow);
