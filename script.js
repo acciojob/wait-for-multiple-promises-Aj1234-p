@@ -7,13 +7,14 @@ function randomDelayTime(time) {
   return delayTime;
 }
 
-let Time = [1000, 2000, 3000];
+let Time = [1, 2, 3];
 let delayTime = randomDelayTime(Time);
 console.log(delayTime);
 
-const makeDelayedPromise = (ms) => {
+const makeDelayedPromise = (s) => {
+	let ms = s*1000;
   return new Promise((resolve) => {
-    setTimeout(() => resolve(ms), ms);
+    setTimeout(() => resolve(s), ms);
   });
 };
 
@@ -34,7 +35,7 @@ Promise.all(delayTime.map(makeDelayedPromise)).then((data) => {
       let tdata1 = document.createElement('td');
       let tdata2 = document.createElement('td');
       tdata1.textContent = `Promise ${i + 1}`;
-      tdata2.textContent = data[i] / 1000;
+      tdata2.textContent = data[i] ;
       trow.appendChild(tdata1);
       trow.appendChild(tdata2);
       output.appendChild(trow);
