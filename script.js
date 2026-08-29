@@ -34,7 +34,7 @@ const Promise3 = ()=>{
 }
 
 let start = Date.now();
-Promise.all([Promise1(),Promise2(),Promise3()]).then((data)=>{
+Promise.all([Promise1(delayTime),Promise2(delayTime),Promise3(delayTime)]).then((data)=>{
   console.log(data);
   output.firstElementChild.remove();
    let end = Date.now();
