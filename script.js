@@ -1,24 +1,35 @@
+function randomDelayTime(time){
+  let delayTime = [...time];
+  for(let i=delayTime.length-1;i>=0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [delayTime[i],delayTime[j]] = [delayTime[j],delayTime[i]];
+  }
+  return delayTime;
+}
+
 let output = document.querySelector('#output');
-const delayTime1 = 1000, delayTime2 = 2000, delayTime3 = 3000;
+let Time = [1000,2000,3000];
+let delayTime = randomDelayTime(Time);
+console.log(delayTime);
 const Promise1 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(2000);
-    },2000);
+      resolve(delayTime[0]);
+    },delayTime[0]);
   })
 }
 const Promise2 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(1000);
-    },1000);
+      resolve(delayTime[1]);
+    },delayTime[1]);
   })
 }
 const Promise3 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(3000);
-    },3000);
+      resolve(delayTime[2]);
+    },delayTime[2]);
   })
 }
 
@@ -26,7 +37,7 @@ let start = Date.now();
 Promise.all([Promise1(),Promise2(),Promise3()]).then((data)=>{
   console.log(data);
   output.firstElementChild.remove();
-  let end = Date.now();
+   let end = Date.now();
    let totalSeconds = (end-start)/1000;
   for(let i=0;i<data.length;i++){
     let trow = document.createElement('tr');
@@ -46,6 +57,4 @@ Promise.all([Promise1(),Promise2(),Promise3()]).then((data)=>{
   trow.appendChild(tdata1);
   trow.appendChild(tdata2);
   output.appendChild(trow);
-
 })
-
