@@ -14,22 +14,22 @@ console.log(delayTime);
 const Promise1 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(2000);
-    },2000);
+      resolve(delayTime[0]);
+    },delayTime[0]);
   })
 }
 const Promise2 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(1000);
-    },1000);
+      resolve(delayTime[1]);
+    },delayTime[1]);
   })
 }
 const Promise3 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(3000);
-    },3000);
+      resolve(delayTime[2]);
+    },delayTime[2]);
   })
 }
 
