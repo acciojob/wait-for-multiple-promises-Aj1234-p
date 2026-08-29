@@ -3,22 +3,22 @@ const delayTime1 = 1000, delayTime2 = 2000, delayTime3 = 3000;
 const Promise1 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(delayTime2);
-    },delayTime2);
+      resolve(2000);
+    },2000);
   })
 }
 const Promise2 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(delayTime1);
-    },delayTime1);
+      resolve(1000);
+    },1000);
   })
 }
 const Promise3 = ()=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-      resolve(delayTime3);
-    },delayTime3);
+      resolve(3000);
+    },3000);
   })
 }
 
