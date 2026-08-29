@@ -11,21 +11,21 @@ let output = document.querySelector('#output');
 let Time = [1000,2000,3000];
 let delayTime = randomDelayTime(Time);
 console.log(delayTime);
-const Promise1 = ()=>{
+const Promise1 = (delayTime)=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
       resolve(delayTime[0]);
     },delayTime[0]);
   })
 }
-const Promise2 = ()=>{
+const Promise2 = (delayTime)=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
       resolve(delayTime[1]);
     },delayTime[1]);
   })
 }
-const Promise3 = ()=>{
+const Promise3 = (delayTime)=>{
   return new Promise((resolve,reject)=>{
     setTimeout(()=>{
       resolve(delayTime[2]);
