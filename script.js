@@ -22,12 +22,12 @@ const Promise3 = ()=>{
   })
 }
 
-let start = new Date().getSeconds().toFixed(3);
+let start = Date.now();
 Promise.all([Promise1(),Promise2(),Promise3()]).then((data)=>{
   console.log(data);
   output.firstElementChild.remove();
-   let end = new Date().getSeconds().toFixed(3);
-   let totalSeconds = end-start;
+  let end = Date.now();
+   let totalSeconds = (end-start)/1000;
   for(let i=0;i<data.length;i++){
     let trow = document.createElement('tr');
     let tdata1 = document.createElement('td');
